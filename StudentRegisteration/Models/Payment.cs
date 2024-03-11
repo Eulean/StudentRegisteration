@@ -10,5 +10,7 @@ namespace StudentRegisteration.Models
         public int Id { get; set; }
 
         // For Su Yi to write 
+        public string PaymentType { get; set; }
+        public DateTime TransactionDateTime { get; set; }
     }
 }
