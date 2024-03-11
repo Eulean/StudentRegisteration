@@ -8,32 +8,32 @@ namespace StudentRegisteration.Models
 {
     public class Student
     {
-        [Key]
+        //student Info
         public int Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
         public string Name { get; set; }
-
-        [Required]
-        [StringLength(100)]
         public string Email { get; set; }
-
-        [Required]
-        [StringLength(100)]
         public string Password { get; set; }
+        public DateTime BirthDate { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        [Display(Name = "Phone Number")]
-        public string Phone {  get; set; }
+        // extra contact info
+        public string Phone {  get; set; }   
+        public short NRC { get; set; }
+        public DateTime RegDate { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        [Display(Name = "NRC Number")]
-        public string NRC { get; set; }
+        //Gender
+        public Gender Gender { get; set; }   
+        public int GenderId { get; set; }
 
-        [Required]
-        public DateTime RegDate { get; set; } = DateTime.Now;
+        //Sememster
+        public Semester Semester { get; set; }
+        public int SemesterId { get; set; }
+          
+        //Address
+        public Address Address { get; set; }
+        public int AddressId { get; set; }
+        
+        //PayMent
+        public Payment Payment { get; set; }
+        public int PaymentId { get; set; }
     }
 }
