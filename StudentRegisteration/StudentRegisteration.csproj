@@ -117,15 +117,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\ApplicationDbContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403120252364_startingDatabase.cs" />
+    <Compile Include="Migrations\202403120252364_startingDatabase.Designer.cs">
+      <DependentUpon>202403120252364_startingDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403120727414_makingChangeToDatabase.cs" />
+    <Compile Include="Migrations\202403120727414_makingChangeToDatabase.Designer.cs">
+      <DependentUpon>202403120727414_makingChangeToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Semester.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +190,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Student\Register.cshtml" />
+    <Content Include="Views\Student\_Step1.cshtml" />
+    <Content Include="Views\Student\_Step2.cshtml" />
+    <Content Include="Views\Student\_Step3.cshtml" />
+    <Content Include="Views\Student\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -209,6 +225,14 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202403120252364_startingDatabase.resx">
+      <DependentUpon>202403120252364_startingDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403120727414_makingChangeToDatabase.resx">
+      <DependentUpon>202403120727414_makingChangeToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

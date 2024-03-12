@@ -12,7 +12,8 @@ namespace StudentRegisteration.Context
         public DbSet<Student> students {  get; set; }
         public DbSet<Gender> genders { get; set; }
         public DbSet<Semester> semesters { get; set; }
-
+        public DbSet<Address> addresses { get; set; }
+        public DbSet<Payment> payment { get; set; }
         // Address and Payment is For Su Yi
     }
 }

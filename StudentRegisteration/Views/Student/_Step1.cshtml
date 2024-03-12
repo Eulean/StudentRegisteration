@@ -1,0 +1,54 @@
+﻿@model StudentRegisteration.ViewModels.RegistrationViewModel
+
+<div class="d-flex justify-content-center align-items-center">
+
+    @using (Html.BeginForm("Register", "Student", FormMethod.Post, new { id = "registrationForm" }))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.Name)
+            @Html.TextBoxFor(m => m.Student.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.Email)
+            @Html.TextBoxFor(m => m.Student.Email, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.Password)
+            @Html.TextBoxFor(m => m.Student.Password, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.BirthDate)
+            @Html.TextBoxFor(m => m.Student.BirthDate, "{0:yyyy MMM dd}", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.Phone)
+            @Html.TextBoxFor(m => m.Student.Phone, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.Gender)
+            @Html.TextBoxFor(m => m.Student.Gender, new { @class = "form-control" })
+        </div>
+        @Html.HiddenFor(m => m.Step, new { id = "Step" })
+
+<div  class="d-flex justify-content-end mt-3">
+    <button type="button" onclick="nextStep()" class="btn btn-primary">Next</button>
+
+</div>
+    }
+
+</div>
+
+<script>
+    function nextStep() {
+        console.log('Next button clicked'); // Add this line for testing
+        document.getElementById('Step').value = '2';
+        console.log('Step value set to 2'); // Add this line for testing
+        document.getElementById('registrationForm').submit();
+    }
+
+</script>

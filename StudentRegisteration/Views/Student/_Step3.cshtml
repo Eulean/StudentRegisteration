@@ -1,0 +1,40 @@
+﻿@model StudentRegisteration.ViewModels.RegistrationViewModel
+<h2>Step 3</h2>
+
+<div class="d-flex justify-content-center align-items-center">
+    @using (Html.BeginForm("Register", "Student", FormMethod.Post, new { id = "registrationForm" }))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.Name)
+            @Html.TextBoxFor(m => m.Student.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Student.Email)
+            @Html.TextBoxFor(m => m.Student.Email, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+
+        @Html.HiddenFor(m => m.Step)
+
+        @Html.HiddenFor(m => m.Student.ApplicationId)
+
+        <div class="d-flex justify-content-between mt-3">
+
+            <button type="button" onclick="prevStep()" class="btn btn-outline-primary">Previus</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+
+
+    }
+
+</div>
+
+
+<script>
+    function prevStep() {
+        document.getElementById('Step').value = '2';
+
+        document.getElementById('registrationForm').submit();
+    }
+</script>

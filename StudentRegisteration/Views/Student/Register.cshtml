@@ -1,0 +1,41 @@
+﻿@model StudentRegisteration.ViewModels.RegistrationViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Register</h2>
+<div class="d-flex justify-content-center align-items-center">
+
+    
+</div>
+@if(Model.Step == 1)
+            {
+                @Html.Partial("_Step1",Model)
+            }
+else if (Model.Step == 2)
+            {
+                @Html.Partial("_Step2",Model)
+            }
+else if (Model.Step == 3)
+            {
+                @Html.Partial("_Step3",Model)
+            }
+
+<script>
+   function nextStep() {
+      alert('Next button clicked'); // Add this line for testing
+
+    var step = parseInt('@Model.Step') + 1; // Get the current step and increment by 1
+    document.getElementById('Step').value = step; // Update the hidden field value
+    document.getElementById('registrationForm').submit(); // Submit the form
+    }
+
+    function prevStep() {
+    alert('Prev button clicked'); // Add this line for testing
+
+    var step = parseInt('@Model.Step') - 1; // Decrement the current step by 1
+    document.getElementById('Step').value = step; // Update the hidden field value
+    document.getElementById('registrationForm').submit();
+}
+
+</script>

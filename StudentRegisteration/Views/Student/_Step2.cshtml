@@ -1,0 +1,42 @@
+﻿@model StudentRegisteration.ViewModels.RegistrationViewModel
+
+<div class="d-flex justify-content-center align-items-center">
+    @using (Html.BeginForm("Register", "Student", FormMethod.Post, new { id = "registrationForm" }))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Semester.Year)
+            @Html.TextBoxFor(m => m.Semester.Year, new { @class = "form-control" })
+        </div>
+
+        // for Su Yi Semester , Address, Payment
+
+
+
+
+
+
+        @Html.HiddenFor(m => m.Step, new { id = "Step" })
+
+        <div class="d-flex justify-content-between mt-3">
+
+            <button type="button" onclick="prevStep()" class="btn btn-outline-primary">Previous</button>
+            <button type="button" onclick="nextStep()" class="btn btn-primary">Next</button>
+        </div>
+    }
+
+</div>
+
+            
+<script>
+    function prevStep() {
+        document.getElementById('Step').value = '1';
+
+        document.getElementById('registrationForm').submit();
+    }
+
+    function nextStep() {
+        document.getElementById('Step').value = '3';
+
+        document.getElementById('registrationForm').submit();
+    }
+</script>
